@@ -102,7 +102,7 @@ Plots : contains the graphs
 
 Basic Approach:
 
-So in this task I have run this model for a total of 11000000 episodes in batches of 1000000 episodes each.
+So in this task I have run this model for a total of 11000000 episodes in batches of 1000000 episodes each.(around 40minutes for each batch)
 
 For the first batch I have run this code initializing a zero numpy array for the next batches I have loaded the preexisting q table to modify it.
 
