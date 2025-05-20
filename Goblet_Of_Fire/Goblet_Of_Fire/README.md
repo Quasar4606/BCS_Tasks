@@ -41,7 +41,6 @@ DANGER_ZONE_PENALTY = -10  #for being near death eater
 -10 for moving in same cell more than 3 times
 
 
-
 Parameters:
 
 ALPHA = 0.25 #learning rate
@@ -58,7 +57,67 @@ EPSILON_DECAY = 0.9997 #decay constant for epsilon
 
 MIN_EPSILON = 0.01 #minimun of epsilon
 
-NO_OF_EPISODES = 1000000 #total no. of episodes
+NO_OF_EPISODES = 1000000 #total no. of episodes(per batch)
 
 MAX_STEPS = 150 #maximum steps
+
+
+Assumptions:
+
+In pygame, I have used the following colors:
+
+Red : Harry
+
+Blue : Death Eater
+
+Green : Cup
+
+Black : Walls
+
+White : Path
+
+File Structure:
+
+Maps: contains maps(I hve used V2 for this)
+
+map_generator.py: contains functions to load maps and assign initial positions for harry,cup and death eater
+
+bfs.py: bfs algo for death eater
+
+q_learning.py: q learning for training harry and also graph plotting
+
+pygame_visual.py: visual representation for pygame
+
+testing.py: getting the success rate of model 
+
+evaluate_harry.py: used to get number of generations for getting 10 consecutive wins
+
+q_table_compressed.py: compressed q table
+
+compress.py: compressing the q table obtained from q_learning.py
+
+decompress.py: decompressing the compressed q table
+
+Plots : contains the graphs
+
+Basic Approach:
+
+So in this task I have run this model for a total of 11000000 episodes in batches of 1000000 episodes each.
+
+For the first batch I have run this code initializing a zero numpy array for the next batches I have loaded the preexisting q table to modify it.
+
+The parameters and rewards for the first batch are above. After the second batch I changed alpha to 0.04 and epsilon to 0.1. After the 3rd batch I realsied the model is moving in same cell for more number of times so I have increaed penalty for moving in same cell from -10 to -50.
+
+I did this as the q table size is very big(It wasn't even uploading on github so I had to compress it). Finally I could get a success rate of around 70%.
+
+
+How to Run:
+
+First you need to run decompress.py to get the q_table.npy file which contains q table.(very important)
+
+After that if you want to check the pygame visual then you can run pygame_visual.py.
+
+If you want to check number of generations for harry to get 10 consecutive wins then run evaluate_harry.py and if you want to check success rate then run testing.py.
+
+
 
