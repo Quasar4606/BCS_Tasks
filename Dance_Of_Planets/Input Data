@@ -1,0 +1,13 @@
+This is the input data used:
+
+Enter mass of body 1 (in kg):  2
+Enter mass of body 2 (in kg):  3
+Enter the initial x-coordinate of the body 1(in m):  2
+Enter the initial y-coordinate of the body 1(in m):  1
+Enter the initial x-coordinate of the body 2(in m):  4
+Enter the initial y-coordinate of the body 2(in m):  2
+Enter the initial x-velocity of the body 1 (in m/s):  2
+Enter the initial y-velocity of the body 1(in m/s):  5
+Enter the initial x-velocity of the body 2(in m/s):  2
+Enter the initial y-velocity of the body 2(in m/s):  3
+Enter the time for prediction (seconds):  15
